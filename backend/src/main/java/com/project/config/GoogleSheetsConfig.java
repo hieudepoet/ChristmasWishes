@@ -15,9 +15,12 @@ import com.google.api.services.sheets.v4.SheetsScopes;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.oauth2.GoogleCredentials;
 
+import io.github.cdimascio.dotenv.Dotenv;
+
 @Configuration
 public class GoogleSheetsConfig {
-    private static final String CREDENTIALS_FILE_PATH = "D:\\Code\\Web_Projects\\ChristmasWishes\\backend\\src\\main\\resources\\GoogleSheetsCredentials.json";
+    private static final Dotenv dotenv = Dotenv.configure().load();
+    private static final String CREDENTIALS_FILE_PATH = dotenv.get("GOOGLE_CREDENTIALS_PATH");
 
     @Bean
     public Sheets googleSheetsService() throws IOException, GeneralSecurityException {
