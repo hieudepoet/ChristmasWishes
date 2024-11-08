@@ -12,9 +12,9 @@
     <description>Java backend project for a Christmas web app with Google Sheets and OAuth integration</description>
 
     <properties>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-</properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
     <!-- Dependencies -->
     <dependencies>
@@ -76,13 +76,18 @@
         </dependency>
 
         <!-- Spring Boot -->
-        <!-- 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-            <version>2.7.1</version>
+            <version>2.7.9</version>
         </dependency> 
-        -->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.7.9</version>
+        </dependency> 
+    
     </dependencies>
 
     <build>
@@ -97,15 +102,42 @@
                     <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
-            
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.0.0</version>
+
+            <!-- <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.1</version>
                 <configuration>
-                    <mainClass>com.example.Main</mainClass>
+                    <archive>
+                        <manifestEntries>
+                            <Main-Class>com.project.App</Main-Class> 
+                        </manifestEntries>
+                    </archive>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.7.9</version>
+                <configuration>
+                    <mainClass>com.project.App</mainClass> 
+                </configuration>
+            </plugin> -->
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.7.9</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            
         </plugins>
     </build>
 </project>

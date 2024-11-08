@@ -22,8 +22,8 @@ public class GoogleSheetsConfig {
     private static final Dotenv dotenv = Dotenv.configure().load();
     private static final String CREDENTIALS_FILE_PATH = dotenv.get("GOOGLE_CREDENTIALS_PATH");
 
-    @Bean
-    public Sheets googleSheetsService() throws IOException, GeneralSecurityException {
+    @Bean(name = "googleSheetsConfigBean")
+    public Sheets googleSheetsConfig() throws IOException, GeneralSecurityException {
         GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream(CREDENTIALS_FILE_PATH))
                 .createScoped(Collections.singleton(SheetsScopes.SPREADSHEETS));
 
