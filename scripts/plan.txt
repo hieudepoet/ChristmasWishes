@@ -1,0 +1,14 @@
+Tổng hợp:
+- FE, BE
++ FE: html, css, js(DOM)
++ BE: java
+- CSDL: GoogleDrive API
+- Code: github.io
+- Background: (Tại quầy)
+- Functions: 
+	QUÂN: + HomePage: Page chính cho trang Noel, decoration,...
+	KHOA: + FormPage: Form riêng để điền thông tin user (Họ Tên, ngày sinh, email, lời chúc)
+	----+ //RandomPage: trang web random số 001-050(F-M), 051-080(LGBT), (số lần xuất hiện của các số tối đa 2 lần, và có thể thay đổi range tùy thuộc vào số lượng sinh viên tham gia)
+	QUÂN/KHOA: + ResultPage: After formPage, suy ra answer (Lời chúc của user đã nhập, số may mắn, lời cảm ơn của câu lạc bộ) - THÊM BUTTON BACK TO HOME
+	HIẾU: + Google sheets lưu trữ data của users (info, lời chúc, số may mắn, gửi gender?)
+	HIẾU/a THỊNH+ Mail: nhờ a Thịnh viết mail dùm nội dung, gửi thiệp có thiết kế(cây thông, tuyết, lò sưởi) - có các ý chính: lời chúc, quà thưởng = mail xác nhận có quà
